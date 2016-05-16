@@ -7,16 +7,15 @@ var authToken = 'a87e42e64af5d26c2f20e6e61a269a3a';
 var accountSid = apiKey;
 var authToken = authToken;
 var client = require('twilio')(accountSid, authToken);
-console.log(client);
  
-client.messages.create({
-    body: "Hello buddy, isnt this cool?",
-    to: "+15613190727",
-    from: "+14255239592"
-}, function(err, message) {
-		console.log(err)
-    process.stdout.write(message.sid);
-});
+// client.messages.create({
+//     body: "Hello buddy, isnt this cool?",
+//     to: "+15613190727",
+//     from: "+14255239592"
+// }, function(err, message) {
+// 		console.log(err)
+//     process.stdout.write(message.sid);
+// });
 
 server.set('view engine', 'ejs')
 server.use(bodyParser.urlencoded({extended:true}))
