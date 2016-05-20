@@ -24,14 +24,15 @@ nav {
 	padding-top: 15px;
 /*	background-color: rgb(66, 105, 101);*/
 	background-color: rgb(68, 96, 95);
-	z-index: 1000;
+/*	z-index: 1000;*/
 	opacity: 1.0;
 }
 
 nav a {
 	color: white;
 	text-transform: uppercase;
-	font-size: 13px;
+/*	font-size: 13px;*/
+	font-size: 1.1vmax;
 	padding: 0 15px 0 15px;
 	letter-spacing: 1px;
 }
@@ -56,13 +57,44 @@ nav a:hover, nav a:focus, nav a:active {
 	outline: 0 none;
 }
 
-.btn-primary {
+.btn-primary, .btn-primary:focus {
 	background: rgb(68, 96, 95);
 	color: white;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+.btn-primary:hover, .btn-primary.active, .btn-primary:active{
 	background: rgb(101, 138, 136);
+}
+
+form {
+	width: 389px;
+	padding: 20px;
+}
+
+#zip_code {
+	width: 196px;
+}
+
+.modal {
+	position: none;
+	text-transform: uppercase;
+}
+
+.modal-content {
+	width: 420px;
+	margin: 0 auto;
+}
+
+select:required:invalid {
+	color: rgb(153, 153, 153);
+}
+
+option[value=""][disabled] {
+	display: none;
+}
+
+option {
+	color: black;
 }
 
 #main {
@@ -71,18 +103,20 @@ nav a:hover, nav a:focus, nav a:active {
 }
 
 #contact img{
-	width: 210px;
-	margin-left: 40px;
+	width: 40%;
+	margin-left: 30px;
+	padding-bottom: 5px;
 }
 
 #contact p {
-	width: 250px;
+	width: 45%;
 }
 
 
 #contact p, #contact img{
 	display: inline-block;
 	vertical-align: top;
+
 }
 
 .wrapper {
@@ -94,8 +128,8 @@ nav a:hover, nav a:focus, nav a:active {
 	margin: 60px 0 10px 0;
 }
 
-#contact, #location {
-	margin-bottom: 60px;
+#location, footer {
+	margin-top: 60px;
 }
 
 /*.wrapper:not(#contact), #contact div {
@@ -121,7 +155,7 @@ h3 {
 td {
 	font-size: 13px;
 	vertical-align: top;
-	padding: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 15px;
 }
 
 /*#location div {
@@ -133,10 +167,12 @@ td {
 .addresses {
 	display: inline-block;
 	vertical-align: top;
-	height: 350px;
-	margin: 0 15px 0 15px;
+	height: 380px;
+	margin: 15px 15px 0 15px;
 
 }
+
+
 
 footer {
 	color: white;
@@ -150,7 +186,7 @@ footer {
 }
 
 footer p {
-	width: 800px;
+	width: 80%;
 }
 
 
