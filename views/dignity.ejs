@@ -15,6 +15,16 @@
 			// $(".btn").mouseup(function(){
 			//     $(this).blur();
 			// });
+			$('form').submit(function(){
+				var data = $(this).serialize();
+				$.post( "/sendInfo",  data)
+  			.done(function( data ) {
+  				alert("yay")
+    			$('#myModal').modal('toggle');
+    			$('#closeModal').modal('toggle');
+  			});
+				return false;
+			})
 		});
 
 	</script>
@@ -205,32 +215,32 @@
 					<h4 class="modal-title">Nhận sách <!-- Hướng Dẫn --> Đặt Kế Hoạch miễn phí</h4>
 				</div>
 				<div class="modal-body">
-					<form role="form">
+					<form role="form" action="/sendInfo" method="post">
 						<div class="form-group">
 							<div class="form-inline">
 								<div class="form-group">
 									<label class="sr-only" for="FirstName">TÊN GỌI</label>
-									<input required type="text" class="form-control" id="first_name" placeholder="TÊN GỌI">
+									<input required type="text" class="form-control" id="first_name" name="first_name" placeholder="TÊN GỌI">
 								</div>
 								<div class="form-group">
 									<label class="sr-only" for="LastName">TÊN HỌ</label>
-									<input required type="text" class="form-control" id="last_name" placeholder="TÊN HỌ">
+									<input required type="text" class="form-control" id="last_name" name="last_name"  placeholder="TÊN HỌ">
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="sr-only" for="Address">ĐỊA CHỈ</label>
-							<input required type="text" class="form-control" id="address" placeholder="ĐỊA CHỈ">
+							<input required type="text" class="form-control" id="address" name="address" placeholder="ĐỊA CHỈ">
 						</div>
 						<div class="form-group">
 							<label class="sr-only" for="City">THÀNH PHỐ</label>
-							<input required type="text" class="form-control" id="city" placeholder="THÀNH PHỐ">
+							<input required type="text" class="form-control" id="city" name="city" placeholder="THÀNH PHỐ">
 						</div>
 						<div class="form-group">
 							<div class="form-inline">
 								<div class="form-group">
 									<label class="sr-only" for="ZipCode">Zip Code</label>
-									<input required type="text" class="form-control" id="zip_code" placeholder="ZIP CODE">
+									<input required type="text" class="form-control" name="zip_code" id="zip_code" placeholder="ZIP CODE">
 								</div>
 								<div class="form-group">
 									<label class="sr-only" for="states">States</label>
@@ -298,12 +308,23 @@
 						</div>
 						<div class="form-group">
 							<label class="sr-only" for="number">SỐ ĐIỆN THOẠI</label>
-							<input type="text" class="form-control" id="number" placeholder="SỐ ĐIỆN THOẠI">
+							<input type="text" class="form-control" id="number" placeholder="SỐ ĐIỆN THOẠI" name="number">
 						</div>	
 						<button type="submit" class="btn btn-primary">GỬI LỜI YÊU CẦU</button>
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>	
 					</form>
 				</div>
+			</div>
+		</div>
+	</div>
+			<!--Modal-->
+	<div class="modal fade" id="closeModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!--Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">						<button type="button" class="close" data-dismiss="modal">&times;</button><h3>Thank You</h3></div>
+				<div class="modal-body">We'll be in contact with you shortly!						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button></div>
 			</div>
 		</div>
 	</div>
