@@ -29,14 +29,14 @@ server.post('/sendInfo', function(req, res, next){
 	var message = "Name: " + req.body.first_name + " " + req.body.last_name + ". \n";
 	message += "Address: " + req.body.address + ", " + req.body.city + ", " + req.body.state + ", " + req.body.zip_code + ". \n";
 	message += "Number: " + req.body.number + ".";
-	// client.messages.create({
- //    body: message,
- //    to: "+18324907333",
- //    from: "+14255239592"
-	// }, function(err, message) {
-	// 	console.log(err)
- //    process.stdout.write(message.sid);
-	// });
+	client.messages.create({
+    body: message,
+    to: "+18324907333",
+    from: "+14255239592"
+	}, function(err, message) {
+		console.log(err)
+    process.stdout.write(message.sid);
+	});
 	res.send("done");
 })
 

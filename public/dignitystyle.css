@@ -85,6 +85,11 @@ form {
 	margin: 0 auto;
 }
 
+#closeModal .modal-content {
+	width: 320px;
+	text-align: center;
+}
+
 select:required:invalid {
 	color: rgb(153, 153, 153);
 }
